@@ -1,0 +1,172 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{45F981F7-0F5F-4401-8FAB-F87702F42C6F}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MshToMatWPF</RootNamespace>
+    <AssemblyName>MshToMatWPF</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="csmatio">
+      <HintPath>..\MshToMatConverter\bin\Release\csmatio.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="Xceed.Wpf.AvalonDock">
+      <HintPath>..\..\..\..\Instal\AvalonDock_2_0_2000\Xceed.Wpf.AvalonDock.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.AvalonDock.resources">
+      <HintPath>..\..\..\..\Instal\AvalonDock_2_0_2000\ru\Xceed.Wpf.AvalonDock.resources.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Drawing\ControlLinePointCloud.cs" />
+    <Compile Include="Drawing\LineViewerSpline.cs" />
+    <Compile Include="Drawing\LineViewer.cs" />
+    <Compile Include="Drawing\PointCloud.cs" />
+    <Compile Include="Drawing\Primitives\Sphere.cs" />
+    <Compile Include="Geometry\Curve\Circle.cs" />
+    <Compile Include="Geometry\Curve\CurveLine.cs" />
+    <Compile Include="Geometry\Geometry3D\Edge.cs" />
+    <Compile Include="Geometry\Geometry3D\Edge2D.cs" />
+    <Compile Include="Geometry\Geometry3D\Edge3D.cs" />
+    <Compile Include="Geometry\Geometry3D\Facet.cs" />
+    <Compile Include="Drawing\MeshContainer.cs" />
+    <Compile Include="Geometry\Curve\SecondOrderCurve.cs" />
+    <Compile Include="Drawing\Drawable.cs" />
+    <Compile Include="Geometry\Point\AddPointComponent.cs" />
+    <Compile Include="Geometry\Point\LinePoint.cs" />
+    <Compile Include="Geometry\Point\Segment.cs" />
+    <Compile Include="Geometry\Spline\ICurve.cs" />
+    <Compile Include="Geometry\Spline\SplineBetta.cs" />
+    <Compile Include="Geometry\Spline\SplineHermite.cs" />
+    <Compile Include="Geometry\Spline\Spline3rd.cs" />
+    <Compile Include="Geometry\Geometry3D\Triangle.cs" />
+    <Compile Include="Geometry\Geometry3D\Triangle2D.cs" />
+    <Compile Include="Geometry\Geometry3D\Triangle3D.cs" />
+    <Compile Include="Geometry\Geometry3D\Vertex.cs" />
+    <Compile Include="Geometry\Geometry3D\Vertex2D.cs" />
+    <Compile Include="Geometry\Geometry3D\Vertex3D.cs" />
+    <Compile Include="Geometry\Spline\SplineController.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Geometry\Spline\SplineLinear.cs" />
+    <Compile Include="MeshImporter\ImportMesh.cs" />
+    <Compile Include="MeshImporter\ImportMeshMsh.cs" />
+    <Compile Include="ModellingTree\ContextMenuNodeStrategy\ContextMenuNodeStrategyFissure.cs" />
+    <Compile Include="ModellingTree\ContextMenuNodeStrategy\IContextMenuNodeStrategy.cs" />
+    <Compile Include="ModellingTree\ModellingTreeNodeFissure.cs" />
+    <Compile Include="Drawing\Primitives\IPrimitive.cs" />
+    <Compile Include="Drawing\Primitives\Tube.cs" />
+    <Compile Include="Drawing\Primitives\TubeIncline.cs" />
+    <Compile Include="Preferences\ColorManager.cs" />
+    <Compile Include="SubWindow\RenameModellingTreeNode.xaml.cs">
+      <DependentUpon>RenameModellingTreeNode.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ModellingTree\ToolsNodeStrategy\ToolsNodeStrategyFissure.cs" />
+    <Compile Include="ModellingTree\ToolsNodeStrategy\IToolsNodeStrategy.cs" />
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="SubWindow\RenameModellingTreeNode.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ModellingTree\ModellingTreeController.cs" />
+    <Compile Include="ModellingTree\ModellingTreeNode.cs" />
+    <Compile Include="ModellingTree\ModellingTreeNodeGrid.cs" />
+    <Compile Include="ModellingTree\ModellingTreeNodeProject.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\LinearMath\myMath\LinearMath.csproj">
+      <Project>{EF6CDA63-2BAB-4E9E-809E-157EDB7231CD}</Project>
+      <Name>LinearMath</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
